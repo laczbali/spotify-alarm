@@ -73,10 +73,11 @@ sp.shuffle(
     state=True
 )
 
-sp.volume(
-    device_id=playback_device["id"],
-    volume_percent=PLAYBACK_VOLUME
-)
+# volume control sometimes throws a SpotifyException, reason: VOLUME_CONTROL_DISALLOW
+# sp.volume(
+#     device_id=playback_device["id"],
+#     volume_percent=PLAYBACK_VOLUME
+# )
 
 sp.start_playback(
     device_id=playback_device["id"],
